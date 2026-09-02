@@ -10,7 +10,7 @@ function Nav({ cast, onChoice }) {
       <ul>
         <li><ToggleTheme /></li>
         <li>
-          <details className="dropdown">
+          <details className="dropdown cast-menu">
             <summary>Cast</summary>
             <ul dir="rtl">
               {cast.map(member => (
