@@ -21,6 +21,60 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: 700;
 }
 
+.cast-menu {
+  font-size: 0.8rem;
+}
+
+/* Pico gives the summary a fixed 1rem-based height, so smaller text
+   sits high in the box — center it and keep the chevron right-aligned. */
+.cast-menu > summary {
+  display: flex;
+  align-items: center;
+}
+
+/* Purple button with bold white text. Extra classes are needed to outweigh
+   Pico's own summary colors; the :active/:focus rule keeps Pico from
+   swapping the background back while the dropdown is open. */
+details.dropdown.cast-menu > summary:not([role]),
+details.dropdown.cast-menu > summary:not([role]):active,
+details.dropdown.cast-menu > summary:not([role]):focus {
+  background-color: var(--pico-color-violet-500);
+  border-color: var(--pico-color-violet-500);
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Keep the chevron right-aligned (its float is ignored inside flex) and
+   force it white, since Pico's icon is a fixed dark data URI. */
+.cast-menu > summary::after {
+  margin-inline-start: auto;
+  filter: brightness(0) invert(1);
+}
+
+/* Cast modal: portrait on top, text underneath, both fluid. */
+.member-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.member-detail img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
+
+.member-detail h1 {
+  --pico-font-size: 1.8rem;
+  margin-top: 0;
+}
+
+.member-detail p {
+  font-size: 0.9rem;
+}
+
 b {
   font-family: "Hubot Sans", sans-serif;
   color: var(--pico-color-violet-500);
